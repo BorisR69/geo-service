@@ -11,9 +11,15 @@ class LocalizationServiceImplTest {
     @ValueSource (strings = {"RUSSIA", "USA", "GERMANY", "BRAZIL"})
     void locale(String country) {
         LocalizationServiceImpl location = new LocalizationServiceImpl();
-        Assertions.assertEquals("Добро пожаловать", location.locale(Country.RUSSIA));
-        Assertions.assertEquals("Welcome", location.locale(Country.USA));
-        Assertions.assertEquals("Welcome", location.locale(Country.GERMANY));
-        Assertions.assertEquals("Welcome", location.locale(Country.BRAZIL));
+        switch (country) {
+            case "RUSSIA" :
+                Assertions.assertEquals("Добро пожаловать", location.locale(Country.RUSSIA));
+            case "USA" :
+                Assertions.assertEquals("Welcome", location.locale(Country.USA));
+            case "GERMANY" :
+                Assertions.assertEquals("Welcome", location.locale(Country.GERMANY));
+            case "BRAZIL" :
+                Assertions.assertEquals("Welcome", location.locale(Country.BRAZIL));
+        }
     }
 }
