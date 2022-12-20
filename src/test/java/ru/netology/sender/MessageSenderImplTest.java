@@ -27,7 +27,7 @@ class MessageSenderImplTest {
 
         MessageSenderImpl messageSend = new MessageSenderImpl(geoServiceMoc, locationMoc);
 
-        Map<String, String> headers = new HashMap < >();
+        Map<String, String> headers = new HashMap <>();
         headers.put(MessageSenderImpl.IP_ADDRESS_HEADER, "172.123.12.19");
 
         try {
